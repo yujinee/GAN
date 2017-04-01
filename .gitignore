@@ -47,3 +47,6 @@ secret.py
 secret.json
 .ipynb_checkpoints
 out/
+data/
+samples/
+checkpoint/
