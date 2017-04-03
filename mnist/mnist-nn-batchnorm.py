@@ -11,13 +11,12 @@ learning_rate = 0.001
 training_epochs = 15
 batch_size = 100
 
-def batch_norm(x, epsilon=1e-5, momentum = 0.9, train=True, reuse=None):
+def batch_norm(x, epsilon=1e-5, momentum = 0.9, train=True):
     return tf.contrib.layers.batch_norm(x,
             decay=momentum,
             updates_collections=None,
             epsilon=epsilon,
             scale=True,
-            reuse=reuse,
             is_training=train)
 
 
