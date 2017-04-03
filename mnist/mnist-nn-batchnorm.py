@@ -11,10 +11,13 @@ learning_rate = 0.001
 training_epochs = 15
 batch_size = 100
 
-def batch_norm(x, epsilon=1e-5, momentum = 0.9, train=True):
+def batch_norm(x, epsilon=1e-5, momentum = 0.9, train=True, reuse=None):
     return tf.contrib.layers.batch_norm(x,
             decay=momentum,
+            updates_collections=None,
             epsilon=epsilon,
+            scale=True,
+            reuse=reuse,
             is_training=train)
 
 
@@ -69,6 +72,6 @@ with tf.Session() as sess:
 
         print('Epoch:', '%04d'%(epoch+1), 'avg_loss = {:.9f}'.format(avg_loss))
 
-    total_acc = sess.run(accuracy, feed_dict={X: mnist.test.images, Y: mnist.test.labels, train: True})
+    total_acc = sess.run(accuracy, feed_dict={X: mnist.test.images, Y: mnist.test.labels, train: False})
     print('final accuracy =', '{:.9f}'.format(total_acc))
 
