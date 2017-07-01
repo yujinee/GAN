@@ -3,3 +3,4 @@
   * mnist
   * gan
   * dcgan
+  * artistic style
