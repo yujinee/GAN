@@ -48,6 +48,5 @@ secret.json
 .ipynb_checkpoints
 out/
 data/
-samples/
 checkpoint/
 MNIST_data/
